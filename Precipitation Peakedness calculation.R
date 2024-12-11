@@ -98,10 +98,10 @@ peak_ind_calc <- function(x){ #Index comparing to all maximum precipitations
   # peak_ind_thr[peak_ind_thr <=1.5] <- NA
 }
 
-#Load the basins of Piedmont and aggregate the precipitation data
+#Load a basins .shp file and aggregate the precipitation data
 {
   p_load(terra, tidyterra)
-  basins <- vect("/home/admin/OneDrive/ATO4Water/Mappe/bacini_Luca.shp")
+  basins <- vect("")
   basins <- project(basins, "EPSG:4326")
   
   #Sort in decreasing area order
@@ -139,21 +139,3 @@ ggplot(basins)+
     limits = c(-3,3))+
     labs(fill = "Peakedness Index",
          title = t[date])
-
-
-
-# ggplot()+
-#   geom_stars(data = peak_ind_basins[,,date])+
-#   scale_fill_gradient(
-#     name = waiver(),
-#     low = "white",
-#     high = "blue",
-#     na.value = "#FFFFFF00",
-#     aesthetics = "fill",
-#     limits = c(-3,4))+
-#   labs(fill = "Peakedness Index",
-#        title = st_get_dimension_values(prec_basins[,,date], "time"))
-# 
-# peak_ind_basins$Prec
-
-
