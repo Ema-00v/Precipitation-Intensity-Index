@@ -3,7 +3,7 @@ pacman::p_load(pacman, stars, dplyr, tidyverse, ggplot2, cubelyr, data.table)
 #Data input
 {
 #Load the .nc file
-prec <- read_stars("/home/admin/Desktop/Research/ATO4Water/R Index Analysis/NWIOIprecDAY.nc")
+prec <- read_stars("file/address")
 
 #Change the name of the NWIOIprecDAY attribute
 attributes(prec)$names <- "Prec"
